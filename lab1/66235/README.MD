@@ -1,6 +1,7 @@
 # Instalacja
 
 pip install -r requirements.txt w folderze z tym plikiem
+
 python project.py
 
 # Treść 
