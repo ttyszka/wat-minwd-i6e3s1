@@ -24,17 +24,12 @@ dotnet run --project Minwd.BasicConsoleApplication
 
 Zadanie 6. Dziecko w pewnym wieku potrzebuje określonych ilości witamin. Ilość witamin dostarczanych przez pewne produkty przedstawiono poniżej. Należy wyznaczyć takie ilości poszczególnych produktów, aby zapewnić pożądaną ilość zachowując jak najniższy koszt.
 
-Produkty Ilość witamin w jednostce Koszt jednostkowy [zł] A B
-
-P1 6 1 1,2
-
-P2 3 3 1,8
-
-P3 4 2 2,0
-
-P4 4 4 0,9
-
-Minimalna ilość 120 60
+|Produkty Ilość witamin w jednostce Koszt jednostkowy [zł]| |A| |B|
+|P1| |6| |1| |1,2|
+|P2| |3| |3| |1,8|
+|P3| |4| |2| |2,0|
+|P4| |4| |4| |0,9|
+|Minimalna ilość| |120| |60|
 
 Zbuduj model matematyczny i rozwiąż zadanie metodą geometryczną.
 
