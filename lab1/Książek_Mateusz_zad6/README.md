@@ -1,26 +1,6 @@
 # Zadanie 6, Mateusz Książek I6E3S1
 
-The application shows a way to solve a simple linear optimization problem using the Or-Tools library.
-
-## Installation:
-
-Make sure to install the .Net Core 3.0 SDK for the proper functioning.
-You can find it [here](https://dotnet.microsoft.com/download/dotnet-core/3.0) .
-
-To start the application from the command line, make sure you are inside the project with the solution. 
-
-```
-cd [YourDirectory]../wat-minwd/i6e3s1/c#/Or_Tools_Library_Example
-```
-
-Then just simply run the command from the powershell/cmd: 
-```
-dotnet run --project Minwd.BasicConsoleApplication
-```
-
-*There should be no worries to try compile it on Linux machine*
-
-## Linear problem which it's solving: 
+## Treść zadania: 
 
 Zadanie 6. Dziecko w pewnym wieku potrzebuje określonych ilości witamin. Ilość witamin dostarczanych przez pewne produkty przedstawiono poniżej. Należy wyznaczyć takie ilości poszczególnych produktów, aby zapewnić pożądaną ilość zachowując jak najniższy koszt.
 
@@ -84,3 +64,20 @@ P4 = 12
 
 Wartość funkcji celu: f(P*)=25,2
 
+## Additional notes
+
+Make sure to install the .Net Core 3.0 SDK for the proper functioning.
+You can find it [here](https://dotnet.microsoft.com/download/dotnet-core/3.0) .
+
+To start the application from the command line, make sure you are inside the project with the solution. 
+
+```
+cd [YourDirectory]../wat-minwd/i6e3s1/c#/Or_Tools_Library_Example
+```
+
+Then just simply run the command from the powershell/cmd: 
+```
+dotnet run --project Minwd.BasicConsoleApplication
+```
+
+*There should be no worries to try compile it on Linux machine*
