@@ -49,15 +49,15 @@ Ilość witaminy B w jednostce produktu: Lc∈P Lc=<0;+inf>
 Koszt jednostkowy produktu Zc∈R+
 
 
-Ilość jednostek wit. A dla wszystkich produktów nie może być mniejsza niż 120.
+Ilość jednostek wit. A dla wszystkich produktów nie może być mniejsza niż 120:
 
 6P1+3P2+4P3+4P4 >= 120
 
-Ilość jednostek wit. B dla wsyzsktich produktów nie może być mniejsza niż 60.
+Ilość jednostek wit. B dla wszysktich produktów nie może być mniejsza niż 60:
 
 1P1+3P2+2P3+4P4 >= 60
 
-Koszt jednostkowy powinien być jak najniższy
+Koszt jednostkowy powinien być jak najniższy:
 
 1,2P1+1,8P2+2,0P3+0,9P4 -> min
 
