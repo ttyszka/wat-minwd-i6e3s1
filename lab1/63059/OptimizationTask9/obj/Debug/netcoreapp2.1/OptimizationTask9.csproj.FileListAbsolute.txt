@@ -1,0 +1,11 @@
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\bin\Debug\netcoreapp2.1\OptimizationTask9.deps.json
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\bin\Debug\netcoreapp2.1\OptimizationTask9.runtimeconfig.json
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\bin\Debug\netcoreapp2.1\OptimizationTask9.runtimeconfig.dev.json
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\bin\Debug\netcoreapp2.1\OptimizationTask9.dll
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.csprojAssemblyReference.cache
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.AssemblyInfoInputs.cache
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.AssemblyInfo.cs
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\bin\Debug\netcoreapp2.1\OptimizationTask9.pdb
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.dll
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.pdb
+C:\Users\Natalia\source\repos\OptimizationTask9\OptimizationTask9\obj\Debug\netcoreapp2.1\OptimizationTask9.csproj.CoreCompileInputs.cache
