@@ -37,7 +37,7 @@ namespace Scraper.ConsoleApp.Scraper
 
         public override void Init()
         {
-            LoggingLevel = LogLevel.All;
+            LoggingLevel = LogLevel.Critical;
             Request(_url, Parse);
             WorkingDirectory = Directory.GetCurrentDirectory() + @"\Output\";
         }
@@ -59,7 +59,13 @@ namespace Scraper.ConsoleApp.Scraper
 
                 ProductList.Add(singleProduct);
             }
+            string path = string.Concat(Directory.GetCurrentDirectory(), @"\Output\Products.json");
+            if (ProductList.Count == 0)
+                Log("*NO RESULTS FOR INSERTED INPUT*", LogLevel.Critical);
+            else
+                Log("*SCRAPED DATA HAS BEEN SAVED IN*: " + path, LogLevel.Critical);
             Scrape(ProductList, "Products.json");
+            
         }
 
         #region Product properties private parsing methods
