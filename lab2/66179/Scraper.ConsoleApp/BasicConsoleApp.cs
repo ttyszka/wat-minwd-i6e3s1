@@ -7,8 +7,9 @@ namespace Scraper.ConsoleApp
     {
         static void Main(string[] args)
         {
+            string scrapingWebsiteUrl = "https://www.morele.net/laptopy/laptopy/notebooki-laptopy-ultrabooki-31/";
             // Create Object From Hello Scrape class
-            var scrape = new MoreleScraper();
+            var scrape = new MoreleScraper(scrapingWebsiteUrl);
             // Start Scraping
             scrape.Start();
         }
