@@ -7,9 +7,18 @@ using static Scraper.ConsoleApp.Enums.ValidatorHelper;
 
 namespace Scraper.ConsoleApp.BasicValidator
 {
+    /// <summary>
+    /// Validator class which validates entered input.
+    /// </summary>
     public class MoreleScraperValidator : IValidator
     {
+        // Url regex pattern.
         private readonly string _httpRegexPattern = @"^(http|https|ftp|)\://|[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$";
+        /// <summary>
+        /// Method which returns exact InputTypeEnum for entered input.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>InputTypeEnum</returns>
         public InputTypeEnum IsCorrectInput(string input)
         {
             if (ValidateIfCorrectUrl(input))
@@ -19,6 +28,11 @@ namespace Scraper.ConsoleApp.BasicValidator
             else
                 return InputTypeEnum.Incorrect;
         }
+        /// <summary>
+        /// Method which uses regex to check if entered url is valid. 
+        /// </summary>
+        /// <param name="userInput"></param>
+        /// <returns>Boolean value.</returns>
         private bool ValidateIfCorrectUrl(string userInput)
         {
             var regex = new Regex(_httpRegexPattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
