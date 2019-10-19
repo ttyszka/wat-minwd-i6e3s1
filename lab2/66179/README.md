@@ -49,7 +49,7 @@ The application allows you to search by a specific category or by a phrase enter
 
 Usage example:
 
-![Basic Usage Example](https://imgur.com/a/rmeIxVA)
+![Basic Usage Example](https://i.imgur.com/EGLN1IO.png)
 
 ## Remarks
 > When inserting an url, it must lead to a specific subcategory. For example, in case of computers it is necessary to specify subcategories.
