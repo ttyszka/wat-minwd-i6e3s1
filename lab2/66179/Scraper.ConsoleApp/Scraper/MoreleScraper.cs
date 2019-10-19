@@ -1,8 +1,11 @@
 ﻿using IronWebScraper;
 using Scraper.ConsoleApp.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Scraper.ConsoleApp.Scraper
 {
@@ -18,39 +21,80 @@ namespace Scraper.ConsoleApp.Scraper
         private readonly string _featureDescriptionPath = ".cat-product-features > .cat-product-feature";
         private readonly string _pricePath = ".cat-product-right > .cat-product-price > .price-new";
         #endregion
+
+        #region Public collections and variables
+        List<ProductModel> ProductList;
+        #endregion
+
+        #region Ctor
         public MoreleScraper(string? categoryPathUrl)
         {
             _url = categoryPathUrl;
+            // Final collection initialization
+            ProductList = new List<ProductModel>();
         }
+        #endregion
 
         public override void Init()
         {
-            LoggingLevel = WebScraper.LogLevel.All;
+            LoggingLevel = LogLevel.All;
             Request(_url, Parse);
             WorkingDirectory = Directory.GetCurrentDirectory() + @"\Output\";
         }
 
         public override void Parse(Response response)
         {
-            var productList = new List<ProductModel>();
             foreach (var wholeProduct in response.Css(_wholeProductPath))
             {
+                // get main product inside div to work with, and assign to variable
                 var productInsideDivClass = wholeProduct.Css(_productInsideDivPath)[0];
-                var productImgClass = wholeProduct.Css(_imgPath)[0].GetAttribute(_imgContainingAttribute);
+                // create single product model, to fill it's properties and finally and to final collection
                 var singleProduct = new ProductModel();
                 
-                singleProduct.ProductName = productInsideDivClass.Css(_productNamePath)[0].TextContentClean;
-                var parameterList = new List<string>();
+                singleProduct.ProductName = ParseProductName(productInsideDivClass);
+                singleProduct.Parameters = ParseProductParameters(productInsideDivClass);
+                singleProduct.Price = ParseProductPrice(wholeProduct);
+                var productImgUrl = ParseProductImgUrl(wholeProduct);
+                singleProduct.ProductImage = ConvertProductImgToBase64(productImgUrl);
 
-                foreach (var featureDiv in productInsideDivClass.Css(_featureDescriptionPath)) 
-                {
-                    parameterList.Add(featureDiv.TextContentClean);
-                }
-                singleProduct.Parameters = parameterList;
-                singleProduct.Price = wholeProduct.Css(_pricePath)[0].TextContentClean;
-                productList.Add(singleProduct);
+                ProductList.Add(singleProduct);
             }
-            Scrape(productList, "Products.json");
+            Scrape(ProductList, "Products.json");
         }
+
+        #region Product properties private parsing methods
+        private string ParseProductName(HtmlNode productInsideDivHtmlNode)
+        {
+            return productInsideDivHtmlNode.Css(_productNamePath)[0].TextContentClean;
+        }
+        private IEnumerable<string> ParseProductParameters(HtmlNode productInsideDivHtmlNode)
+        {
+            var parameterList = new List<string>();
+            foreach (var featureDiv in productInsideDivHtmlNode.Css(_featureDescriptionPath))
+            {
+                parameterList.Add(featureDiv.TextContentClean);
+            }
+            return parameterList;
+        }
+        private string ParseProductPrice(HtmlNode wholeProductHtmlNode)
+        {
+            return wholeProductHtmlNode.Css(_pricePath)[0].TextContentClean;
+        }
+        private string ParseProductImgUrl(HtmlNode wholeProductHtmlNode)
+        {
+            var imgPath = wholeProductHtmlNode.Css(_imgPath)[0];
+            return imgPath.GetAttribute(_imgContainingAttribute);
+        }
+        #endregion
+        #region Private method which takes base64 from img url
+        private string ConvertProductImgToBase64 (string url)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                var bytes = httpClient.GetByteArrayAsync(url).Result;
+                return Convert.ToBase64String(bytes);
+            }
+        }
+        #endregion
     }
 }
