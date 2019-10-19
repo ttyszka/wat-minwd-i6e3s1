@@ -2,6 +2,8 @@
 
 The application allows user to scrap morele.net website. By category or the search component param.
 
+LIBRARY: IronWebScraper [link](https://ironsoftware.com/)
+
 ## Installation:
 
 Make sure to install the .Net Core 3.0 SDK for the proper functioning.

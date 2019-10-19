@@ -12,6 +12,7 @@ namespace Scraper.ConsoleApp.Scraper
     public class MoreleScraper : WebScraper
     {
         #region Readonly String Path Declarations
+        // Readonly div classes which are used in morele.net parsing.
         private string _url;
         private readonly string _wholeProductPath = ".cat-product";
         private readonly string _productInsideDivPath = ".cat-product-inside";
@@ -23,6 +24,7 @@ namespace Scraper.ConsoleApp.Scraper
         #endregion
 
         #region Public collections and variables
+        //Final parsed collection, containing product model entities.
         List<ProductModel> ProductList;
         #endregion
 
@@ -37,11 +39,16 @@ namespace Scraper.ConsoleApp.Scraper
 
         public override void Init()
         {
+            // Scraper initialization, precised: loglevel, and working directory.
             LoggingLevel = LogLevel.Critical;
             Request(_url, Parse);
             WorkingDirectory = Directory.GetCurrentDirectory() + @"\Output\";
         }
 
+        /// <summary>
+        /// Overrided Parse class, the output is json file containing ProductModel collection.
+        /// </summary>
+        /// <param name="response"></param>
         public override void Parse(Response response)
         {
             foreach (var wholeProduct in response.Css(_wholeProductPath))
@@ -67,7 +74,7 @@ namespace Scraper.ConsoleApp.Scraper
             Scrape(ProductList, "Products.json");
             
         }
-
+        // Methods which parse Product Model's properties.
         #region Product properties private parsing methods
         private string ParseProductName(HtmlNode productInsideDivHtmlNode)
         {
@@ -92,6 +99,7 @@ namespace Scraper.ConsoleApp.Scraper
             return imgPath.GetAttribute(_imgContainingAttribute);
         }
         #endregion
+        // Method returning base64 from img src html tag.
         #region Private method which takes base64 from img url
         private string ConvertProductImgToBase64 (string url)
         {

@@ -11,11 +11,14 @@ namespace Scraper.ConsoleApp
     {
         static void Main(string[] args)
         {
+            // Basic variables initialization.
             bool isCorrectInput = false;
-            IValidator moreleValidator = new MoreleScraperValidator();
             InputTypeEnum inputType;
             string inputPhrase = "";
+            // IValidator object creation.
+            IValidator moreleValidator = new MoreleScraperValidator();
 
+            //Basic menu to simplify usage.
             while (!isCorrectInput) 
             {
                 Console.WriteLine("Please insert morele.net category url or press q button to insert search engine phrase, then press enter");
