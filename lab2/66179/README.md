@@ -53,6 +53,8 @@ Usage example:
 
 ## Remarks
 > When inserting an url, it must lead to a specific subcategory. For example, in case of computers it is necessary to specify subcategories.
+> Please remove all not necessary numbers, like: /,,,,,,,,,,29773O942721/1/ or use the links from README
+
 
 Examples of incorrect URLs: 
 
@@ -60,24 +62,39 @@ Examples of incorrect URLs:
 
 [Price's Alerts](https://www.morele.net/alarmcenowy/)
 
-Examples of correct URLs:
+> Remove the numbers from behind, correct link below.
+[DLA SENIORA :> ] (https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64/,,,,,,,,,,29773O942721/1/)
+```
+https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64//,,,,,,,,,,29773O942721/1/
+```
 
+Examples of correct URLs:
+> IT MAY TAKE A LONG TIME TO SCRAP THIS WEBSITE, THE THIRD LINK IS FOR SAVING TIME
 [Laptops/Notebooks](https://www.morele.net/laptopy/laptopy/notebooki-laptopy-ultrabooki-31/)
 ```
 https://www.morele.net/laptopy/laptopy/notebooki-laptopy-ultrabooki-31/
 ```
 
-[OLED Tvs](https://www.morele.net/rtv/tv-i-video/telewizory-412/,,,,,,,,0,,,,23155O1107159/1/)
+[OLED Tvs](https://www.morele.net/rtv/tv-i-video/telewizory-412/)
 ```
-https://www.morele.net/rtv/tv-i-video/telewizory-412/,,,,,,,,0,,,,23155O1107159/1/
+https://www.morele.net/rtv/tv-i-video/telewizory-412/
 ```
+
+> THIS LINK SHOULD TAKE ONLY A WHILE TO SCRAP
+
+[DLA SENIORA :> ] (https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64)
+```
+https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64/
+```
+
+
 
 >The entered search phrase should always return the correct result if it exists in the [morele.net] database.
 
 Correct search phrase examples:
 ```
-Asus,
-Mi-Band, 
+baterie varta ,  <- average time
+rysik, <- over 1200 records, it will take a few mins
 etc.
 ```
 ### Additional informations:
