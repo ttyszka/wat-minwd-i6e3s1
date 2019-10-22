@@ -11,6 +11,8 @@ namespace Scraper.ConsoleApp.Enums
     {
         // Morele.net search engine url
         private static readonly string _baseSearchEngineUrl = "https://www.morele.net/wyszukiwarka/0/0/,,1,,,,,,,,,,/1/?q=";
+        private static readonly string _comparer = "www.morele.net";
+        private static readonly string _searchEngineComparer = "wyszukiwarka";
         /// <summary>
         /// Enumerator precising entered input.
         /// </summary>
@@ -29,5 +31,23 @@ namespace Scraper.ConsoleApp.Enums
         {
             return string.Concat(_baseSearchEngineUrl, searchPhrase);
         }
+
+        #region Risky part
+        public static bool VerifyUrl(string url)
+        {
+            var splittedUrl = url.Split("/");
+            if (splittedUrl[2] == _comparer)
+            {
+                foreach(var split in splittedUrl)
+                {
+                    if (split == _searchEngineComparer)
+                        return false;
+                }
+                return true;
+            }
+            else
+                return false;
+        }
+        #endregion
     }
 }

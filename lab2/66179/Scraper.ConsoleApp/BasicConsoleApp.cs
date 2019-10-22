@@ -13,6 +13,7 @@ namespace Scraper.ConsoleApp
         {
             // Basic variables initialization.
             bool isCorrectInput = false;
+            bool isSearchEngineMode = false;
             InputTypeEnum inputType;
             string inputPhrase = "";
             // IValidator object creation.
@@ -30,11 +31,13 @@ namespace Scraper.ConsoleApp
                     Console.WriteLine("Please input search engine phrase, then press enter");
                     inputPhrase = Console.ReadLine();
                     isCorrectInput = true;
+                    inputPhrase = inputPhrase.Replace(" ", "+");
                     inputPhrase = SearchEngineUrlConverter(inputPhrase);
+                    isSearchEngineMode = true;
                 }
                 else if (inputType != InputTypeEnum.Incorrect && inputType == InputTypeEnum.Url)
                 {
-                    isCorrectInput = true;
+                    isCorrectInput = VerifyUrl(input);
                     inputPhrase = input;
                 }
                 else if(inputType == InputTypeEnum.Incorrect)
@@ -43,10 +46,16 @@ namespace Scraper.ConsoleApp
                     Console.WriteLine("The input is incorrect, try again.");
                 }
             }
+            #region GetNumberOfPagesInUglyWay :/
+            var numberOfPagesScrapper = new DataCounterScraper(inputPhrase);
+            numberOfPagesScrapper.Start();
+            int numberOfPages = numberOfPagesScrapper.NumberOfPages;
+            #endregion
             // Create Object From Hello Scrape class
-            var scrape = new MoreleScraper(inputPhrase);
+            var scrapeData = new MoreleCategoryScraper(inputPhrase, numberOfPages, isSearchEngineMode);
             // Start Scraping
-            scrape.Start();
+            scrapeData.Start();
+
             
             Console.ReadKey();
         }
