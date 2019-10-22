@@ -63,13 +63,15 @@ Examples of incorrect URLs:
 [Price's Alerts](https://www.morele.net/alarmcenowy/)
 
 > Remove the numbers from behind, correct link below.
-[DLA SENIORA :> ] (https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64/,,,,,,,,,,29773O942721/1/)
+
+[DLA SENIORA :>](https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64/,,,,,,,,,,29773O942721/1/)
 ```
 https://www.morele.net/telefony/telefony-smartfony-krotkofalowki/telefony-komorkowe-64//,,,,,,,,,,29773O942721/1/
 ```
 
 Examples of correct URLs:
 > IT MAY TAKE A LONG TIME TO SCRAP THIS WEBSITE, THE THIRD LINK IS FOR SAVING TIME
+
 [Laptops/Notebooks](https://www.morele.net/laptopy/laptopy/notebooki-laptopy-ultrabooki-31/)
 ```
 https://www.morele.net/laptopy/laptopy/notebooki-laptopy-ultrabooki-31/
