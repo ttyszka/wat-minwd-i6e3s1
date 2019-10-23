@@ -17,5 +17,5 @@ zostają one zapisane do pliku csv<br />
 (w index.js)
 
 chodząc po odnośniku każdej z podstron dotyczącej członka rodziny pobierane są 
-opisy jego dotyczące<br />
+opisy jego dotyczące oraz znajdujące się zdjęcia<br />
 (index2.js)

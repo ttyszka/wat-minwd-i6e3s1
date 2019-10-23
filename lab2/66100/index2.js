@@ -34,8 +34,23 @@ async function getDescription(membersWithHeaders) {
     )
 }
 
+async function getPhotos(membersWithHeaders) {
+    return await Promise.all(
+        membersWithHeaders.map(async member => {
+            try {
+                const htmlResult = await request.get(member.url);
+                const $ = await cheerio.load(htmlResult);
+                member.photos = $('img').toString('base64');
+                return {member};
+            } catch(error) {
+                console.error(error);
+            }
+
+        })
+    )
+}
+
 async function createCsvFile(data) {
-    console.log(typeof(data))
     let csv = new ObjectsToCsv(data);
   
     // Save to file:
@@ -51,7 +66,10 @@ async function scrapeWiki() {
     const parseMembersFullData = JSON.parse("[" + stringDataWithoutLastComma + "]")
     //const parseMembersFullData = Array.from(stringDataWithoutLastComma)
 
+    const membersPhotos = await getPhotos(membersWithHeaders)
+
     await createCsvFile(parseMembersFullData)
+    await createCsvFile(membersPhotos)
 }
 
 scrapeWiki()
