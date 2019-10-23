@@ -1,0 +1,60 @@
+// Do poprawy
+
+using System;
+
+// w1 = 5s1 + s2
+// w2 = 3s1 + 2s2
+// w3 =       4s2
+
+//  10w1 + 24w2 + 12w3 - >max
+//  10(5s1 + s2) + 24(3s1 + 2s2) + 4s2 -> max
+
+// 5s1 + 2s1 <= 3600
+// s2 + 2s2 + 4s2 <= 4800
+// w1, w2, w3 >= 0
+
+namespace Optimize9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MPSolver solver = new MPSolver("LinearProgrammingExample", "GLOP_LINEAR_PROGRAMMING");
+
+            Variable s1 = solver.MakeNumVar(0.0, double.PositiveInfinity, "s1");
+            Variable s2 = solver.MakeNumVar(0.0, double.PositiveInfinity, "s2");
+
+            // 5s1 + 2s1 <= 3600
+            Constraint c0 = solver.MakeConstraint(double.NegativeInfinity, 3600.0);
+            c0.SetCoefficient(s1, 5);
+            c0.SetCoefficient(s1, 2);
+
+            // s2 + 2s2 + 4s2 <= 4800
+            Constraint c1 = solver.MakeConstraint(0.0, double.NegativeInfinity);
+            c1.SetCoefficient(s2, 1);
+            c1.SetCoefficient(s2, 2);
+            c1.SetCoefficient(s2, 4);
+
+            // Objective function: 10(5s1 + s2) + 24(3s1 + 2s2) + 4s2 -> max
+            // 50s1 + 10s2 + 72s1 + 48s2 + 4s1 -> max
+            // 122s1 + 62s2 -> max
+            Objective objective = solver.Objective();
+            objective.SetCoefficient(s1, 122);
+            objective.SetCoefficient(s2, 62);
+            objective.SetMaximization();
+
+            
+            solver.Solve();
+
+            Console.WriteLine("Number of variables = " + solver.NumVariables());
+            Console.WriteLine("Number of constraints = " + solver.NumConstraints());
+            // The value of each variable in the solution.
+            Console.WriteLine("Solution:");
+            Console.WriteLine("s1 = " + s1.SolutionValue());
+            Console.WriteLine("s2 = " + s2.SolutionValue());
+            // The objective value of the solution.
+            Console.WriteLine("Optimal objective value = " +
+                            solver.Objective().Value());
+        }
+    }
+}
