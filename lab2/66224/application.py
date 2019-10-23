@@ -61,6 +61,6 @@ cenys_titless_parsedImgs = [{"Prize": c, "Title": t, "ImageUrl": get_as_base64(i
                             zip(pricesList, titlesList, imagesList)]
 
 # zapisuje do pliku jako JSON, dodatkowo używam cls=Base64Encoder bo bez tego url sie wywala bo w jsonie nie chce sie
-# zapisać ten base, nie wiem dokladnie dlaczego, jest link wyżej - mozesz doczytać
+# zapisać ten base, nie wiem dokladnie dlaczego, jest link wyżej - mozna doczytać
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(cenys_titless_parsedImgs, f, ensure_ascii=False, indent=4, cls=Base64Encoder)
