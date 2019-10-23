@@ -44,7 +44,7 @@ public class OtomotoScraperApp {
   }
 
   private static UserPreferences getUserPreferences() {
-    System.out.println("Welcome in Otomoto.pl" +
+    System.out.println("Witaj w programie Scraper Otomoto.pl" +
         "\nPodaj podstawowe parametry samochodu, którym jesteś zainteresowany:");
 
     Scanner in = new Scanner(System.in);
