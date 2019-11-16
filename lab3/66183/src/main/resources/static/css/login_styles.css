@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.login_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#logo, #login_form {
+    justify-content: center;
+    margin: auto 0;
+    flex: 1 1 50%;
+}
+
+
+#logo img {
+    margin: auto;
+    display: block;
+    width: 312px;
+    height: 312px;
+    border-radius: 20px;
+}
+
+#login_form input {
+
+    margin: 20px auto;
+    display: block;
+    border: solid #1DA1F2 5px;
+    border-radius: 20px;
+    padding: 2%;
+    width: 80%;
+
+}
+
+h2 {
+    margin: auto;
+    text-align: center;
+}
+
+#login_form input:last-of-type {
+    background-color: #1DA1F2;
+
+}
