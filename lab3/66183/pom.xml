@@ -8,18 +8,21 @@
         <version>2.2.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <groupId>wat-minwd-i6e3s1</groupId>
-    <artifactId>66183.zad3</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>66183.zad3</name>
-    <description>Twitter API with Spring Boot</description>
+    <groupId>wat.minwd</groupId>
+    <artifactId>lab3-66183</artifactId>
+    <version>1.0</version>
+    <name>lab3-66183</name>
+    <description>MinWD Twitter API</description>
 
     <properties>
         <java.version>11</java.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -36,6 +39,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -48,10 +56,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-twitter</artifactId>
-            <version>1.1.0.RELEASE</version>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-stream</artifactId>
+            <version>4.0.6</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -59,16 +68,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <outputDirectory>66183/target</outputDirectory>
-                </configuration>
             </plugin>
         </plugins>
     </build>
