@@ -22,7 +22,6 @@ public class TwitterOauthConfig {
     public Twitter twitterInstanceConfig() {
         TwitterFactory tf = new TwitterFactory();
         Twitter twitter = tf.getInstance();
-        System.out.println(twitterConsumerKey);
         twitter.setOAuthConsumer(twitterConsumerKey, twitterConsumerSecret);
         return twitter;
     }

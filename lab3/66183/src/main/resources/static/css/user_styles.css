@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: white;
+    background: linear-gradient(to bottom right, rgba(0, 212, 255, 1) 33%, rgba(121, 9, 111, 1) 100%, rgba(0, 29, 36, 1) 100%);
+}
+
+
+.login_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#top_menu {
+    height: 10%;
+    width: 100%;
+    padding: 2%;
+}
+
+#top_menu h2 {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#top_menu #subpages {
+    align-items: flex-end;
+    text-align: right;
+}
+
+#top_menu a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
