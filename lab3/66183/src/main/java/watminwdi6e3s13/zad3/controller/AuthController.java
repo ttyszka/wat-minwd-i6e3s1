@@ -63,7 +63,7 @@ public class AuthController {
 
         RequestToken requestToken = (RequestToken) request.getSession().getAttribute("requestToken");
         String verifier = request.getParameter("oauth_verifier");
-        // Get twitter access token object by verifying request token
+
         AccessToken accessToken = myTwitter.getOAuthAccessToken(requestToken, verifier);
         request.getSession().removeAttribute("requestToken");
         request.getSession().setAttribute("accessToken", accessToken);
