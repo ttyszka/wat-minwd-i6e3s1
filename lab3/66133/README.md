@@ -10,6 +10,15 @@ Jest to prosta aplikacja opierająca swoje działanie o API twittera.
 - wyświetlanie tweetów (podgląd osi czasu użytkownika)
 - chmura słów zbudowana ze słów z ostatnich 10, 50 lub 100 tweetów (do wyboru przez użytkownika)
 
+## Zrzuty ekranu
+<img src="https://raw.githubusercontent.com/SnadeV/wat-minwd-i6e3s1/feature/task-3/lab3/66133/screenshot-3.jpg" alt="" width="400" />
+<img src="https://raw.githubusercontent.com/SnadeV/wat-minwd-i6e3s1/feature/task-3/lab3/66133/screenshot-2.jpg" alt="" width="400" />
+<img src="https://raw.githubusercontent.com/SnadeV/wat-minwd-i6e3s1/feature/task-3/lab3/66133/screenshot-1.jpg" alt="" width="400" />
+
+## Wymagania
+- Python 2
+- C++ Build Tools for Visual Studio
+
 ## Instalacja
 Z poziomu lokalizacji projektu należy wykonać komendy:
 
