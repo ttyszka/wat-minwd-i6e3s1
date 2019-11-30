@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import twitter4j.HashtagEntity;
 import twitter4j.TwitterException;
 import twitter4j.auth.AccessToken;
+import watminwdi6e3s13.zad3.pojo.FirstLastTweets;
 import watminwdi6e3s13.zad3.pojo.TwitterUser;
 import watminwdi6e3s13.zad3.service.UserInfoService;
 
@@ -45,17 +46,15 @@ public class InfoController {
     @GetMapping(value = "/hashtag_cloud", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<HashtagEntity[]> getTagsFromTweets(HttpServletRequest request, @RequestParam(name = "tweets_number", defaultValue = "20") Integer tweetsNumber) throws TwitterException {
-        System.out.println(tweetsNumber);
         AccessToken accessToken = (AccessToken) request.getSession().getAttribute("accessToken");
         return userInfoService.getTagsFromTweets(tweetsNumber, accessToken);
     }
 
-//    @GetMapping(value = "/tweet", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @ResponseBody
-//    public List<HashtagEntity[]> getTagsFromTweets(HttpServletRequest request) throws TwitterException {
-////        AccessToken accessToken = (AccessToken) request.getSession().getAttribute("accessToken");
-////        List<HashtagEntity[]> hashArray = userInfoService.getTagsFromTweets(tweetsNumber, accessToken);
-////        return hashArray;
-//    }
+    @GetMapping(value = "/tweet", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public FirstLastTweets getTagsFromTweets(HttpServletRequest request) throws TwitterException {
+        AccessToken accessToken = (AccessToken) request.getSession().getAttribute("accessToken");
+        return userInfoService.getFirstAndLastTweets(accessToken);
+    }
 
 }

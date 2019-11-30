@@ -1,5 +1,7 @@
 let userInfoURL = 'http://localhost:8080/info/user';
-let latestHashTagsURL = 'http://localhost:8080/info/hashtag_cloud';
+let latestHashTagsURL = 'http://localhost:8080/info/hashtag_cloud?';
+let firstLastTweetURL = 'http://localhost:8080/info/tweet';
+let signOutURL = 'http://localhost:8080/auth/signout';
 
 
 //get general information about user
@@ -78,15 +80,23 @@ function styleOverview(contentDiv) {
     return infoTable;
 }
 
-async function getHashTagsCloud(tweets = 20) {
+async function getHashTagsCloud(e, tweets = 20) {
 
-    let url = new URL(latestHashTagsURL),
-        params = {tweets_number: tweets};
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    let params = {
+        "tweets_number": e.target.value
+    };
 
-    let response = await fetch(url.toString());
+    console.log(tweets);
+    let query = Object.keys(params)
+        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+        .join('&');
+
+    let url = latestHashTagsURL + query;
+    console.log(url);
+    let response = await fetch(url);
 
     if (!response.ok) {
+        console.log('Not ok');
         return;
     }
 
@@ -104,29 +114,29 @@ async function getHashTagsCloud(tweets = 20) {
 
             let tagDiv = document.createElement('div');
             tagDiv.setAttribute('class', 'tag');
+            tagDiv.style.border = '1px black';
+            tagDiv.style.borderRadius = '10px';
+            tagDiv.style.boxShadow = '2px 2px black 10px';
+            tagDiv.style.margin = '10px 10px';
+            tagDiv.style.display = 'inline-block';
             tagDiv.innerHTML = '#' + mainArray[tweetHashArrayIt].text;
+            tagDiv.style.backgroundColor = 'white';
+            tagDiv.style.color = 'black';
+            tagDiv.style.padding = '10px';
             hashesDiv.appendChild(tagDiv);
         }
     }
 
-    let spanElements = document.querySelectorAll('.tag');
-
-    for (let divElement of spanElements) {
-        divElement.style.border = '1px black';
-        divElement.style.borderRadius = '2px';
-        divElement.style.boxShadow = '2px 2px black 10px';
-        divElement.style.margin = '10px 10px';
-        divElement.style.display = 'inline-block';
-    }
 
     addInputEvent();
 
 
 }
 
+var currentInputValue = 20;
 function styleHashtags(hashTagsDiv) {
 
-    let form = '<h1>Latest hashtags</h1><form><input id="tweets_number" type="number" min="0" value="20"></form><div id="hashes"></div>';
+    let form = '<h1>Latest hashtags</h1><form><input id="tweets_number" type="number" min="0" max="180"></form><div id="hashes"></div>';
 
 
     hashTagsDiv.innerHTML = '';
@@ -136,7 +146,7 @@ function styleHashtags(hashTagsDiv) {
 
     let hashes = document.getElementById('hashes');
 
-    hashes.style.margin = '2% auto';
+    hashes.style.margin = '2% 10px';
 
     return hashes;
 
@@ -144,12 +154,15 @@ function styleHashtags(hashTagsDiv) {
 
 function addInputEvent() {
     let input = document.getElementById('tweets_number');
-    input.addEventListener('change', function () {
-        getHashTagsCloud(input.value)
-            .then(response => console.log("Hash cloud fetching done"));
+    input.setAttribute('value', currentInputValue);
+    input.addEventListener('onblur', getHashTagsCloud, false);
+    input.addEventListener('onchange', function () {
+        currentInputValue--;
+        getHashTagsCloud();
     }, false);
-}
 
+
+}
 
 function addListeners() {
 
@@ -158,9 +171,72 @@ function addListeners() {
 
     console.log(buttons.length);
     buttons[0].addEventListener('click', getOverview);
-    buttons[1].addEventListener('click', getHashTagsCloud);
+    buttons[1].addEventListener('click', getHashTagsCloud, false);
+    buttons[2].addEventListener('click', getFirstLastTweets, false);
+    buttons[3].addEventListener('click', signOut, false);
 
 
+}
+
+
+let getFirstLastTweets = async function () {
+
+
+    let response = await fetch(firstLastTweetURL);
+
+    if (!response.ok) {
+        return;
+    }
+
+    let json = await response.json();
+    let contentDiv = document.getElementById('info_content');
+
+    contentDiv.innerHTML = '';
+    styleFirstLastTweet(contentDiv);
+    let createdAt = document.getElementsByClassName('created_at');
+    let tweetTexts = document.getElementsByClassName('twitter_text');
+    createdAt[0].innerHTML = new Date(json['firstTweet']['createdAt']).toLocaleDateString();
+    createdAt[1].innerHTML = new Date(json['lastTweet']['createdAt']).toLocaleDateString();
+
+    tweetTexts[0].innerHTML = json['firstTweet']['text'];
+    tweetTexts[1].innerHTML = json['lastTweet']['text'];
+
+};
+
+//dynamically style overwiew
+function styleFirstLastTweet(contentDiv) {
+
+    let twoColumn = '<div class="columnTweet"><h1>Latest tweet</h1><p class="created_at"></p><p class="twitter_text"></p></div><div class="columnTweet"><h1>First tweet</h1><p class="created_at"></p><p class="twitter_text"></p></div>';
+
+    let columns = document.getElementsByClassName("columnTweet");
+
+    contentDiv.innerHTML = twoColumn;
+
+    for (let column of columns) {
+        column.style.backgroundColor = 'white';
+        column.style.margin = '10px 10px';
+        column.style.border = '1px black';
+        column.style.borderRadius = '10px';
+        column.style.boxShadow = '5px 5px black 5px';
+        column.style.padding = '2%';
+        column.style.display = 'flex';
+        column.style.flexDirection = 'column';
+        column.style.flexBasis = '100%';
+        column.style.color = 'black'
+
+    }
+
+
+}
+
+async function signOut() {
+    let response = await fetch(signOutURL);
+
+    if (!response.ok) {
+        return;
+    }
+
+    document.location.href = "/";
 }
 
 window.addEventListener("load", getOverview);
