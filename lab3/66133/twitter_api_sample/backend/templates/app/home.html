@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="card events-card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    New tweet
+                </p>
+            </header>
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                    <div class="content" style="padding: 10px;">
+                        <div class="field">
+                            <div class="control">
+                                <textarea name="tweet_text" class="textarea" placeholder="What's up?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="card-footer" style="padding: 5px">
+                    <div class="field" style="align-items: center">
+                        <div class="control">
+                            <button type="submit" name="submit_button" value="tweet" class="button is-link">Tweet
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="card events-card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Tweets
+                </p>
+            </header>
+            <div class="card-table" style="max-height: 500px">
+                <div class="content">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <table class="table is-fullwidth is-striped">
+                            <tbody>
+                            {% for tweet in home_timeline %}
+                                <tr>
+                                    <input id="tweet_id" name="tweet_id" type="text" value="{{ tweet.id }}" hidden/>
+                                    <input id="tweet_favorited" name="tweet_favorited" type="text"
+                                           value="{{ tweet.favorited }}" hidden/>
+                                    <td width="5%"><img src="{{ tweet.user.profile_image_url_https }}"></td>
+                                    <td width="5%">{{ tweet.user.screen_name }}</td>
+                                    <td height="60">{{ tweet.text }}</td>
+                                    <td height="60" class="level-right">
+                                        <button type="submit" class="button is-small is-danger" name="submit_button"
+                                                value="favorite" href="#">
+                                            <span class="icon is-small">
+                                                {% if tweet.favorited == True %}
+                                                    <i class="fa fa-heart"></i>
+                                                {% elif tweet.favorited == False %}
+                                                    <i class="fa fa-heart-o"></i>
+                                                {% endif %}
+                                            </span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
