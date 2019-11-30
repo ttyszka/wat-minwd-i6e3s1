@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-2">
+                    <div class="box">
+                        <p class="subtitle has-text-black">Please login to proceed.</p>
+
+                        <a class="button" href="{% url 'social:begin' 'twitter' %}" style="color: white; background-color: #55acee; border-color: rgba(0,0,0,.2)">
+                            <span class="icon">
+                              <i class="fab fa-twitter"></i>
+                            </span>
+                            <span>Sign in with Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
