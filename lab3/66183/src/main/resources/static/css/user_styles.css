@@ -3,22 +3,26 @@ html, body {
     padding: 0;
     height: 100%;
     color: white;
-    background: linear-gradient(to bottom right, rgba(0, 212, 255, 1) 33%, rgba(121, 9, 111, 1) 100%, rgba(0, 29, 36, 1) 100%);
+    background: linear-gradient(128deg, rgba(102, 40, 156, 1) 31%, rgba(196, 23, 181, 1) 100%, rgba(0, 29, 36, 1) 100%);
 }
 
 
 .login_container {
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
 }
 
 #top_menu {
     height: 10%;
-    width: 100%;
     padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 #top_menu h2 {
@@ -26,14 +30,70 @@ html, body {
     text-align: left;
 }
 
-#top_menu #subpages {
-    align-items: flex-end;
-    text-align: right;
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
 }
 
-#top_menu a {
-    color: white;
+#top_menu .action_menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+#top_menu button {
+    background-color: transparent;
     text-transform: uppercase;
     text-decoration: none;
+    margin: 0 10px;
+    text-align: center;
+    padding: 1%;
+    color: white;
+    border: solid white 1px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px black;
 
 }
+
+
+#top_menu button:last-child {
+    background: linear-gradient(to bottom right, rgba(0, 24, 29, 1) 33%, rgba(121, 9, 111, 1) 100%, rgba(0, 29, 36, 1) 100%);
+    border: none;
+    justify-content: flex-end;
+}
+
+#content {
+    background: linear-gradient(128deg, rgba(89, 0, 255, 1) 33%, rgba(196, 23, 181, 1) 100%, rgba(0, 29, 36, 1) 100%);
+    margin: 1% auto;
+    width: 90%;
+    height: 80%;
+    border: solid transparent 2px;
+    border-radius: 20px;
+    box-shadow: -10px -5px 50px black;
+
+}
+
+#content #profile {
+    width: 20%;
+    height: 20%;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+#info_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    background-color: transparent;
+}
+
+

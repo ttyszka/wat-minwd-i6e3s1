@@ -21,6 +21,7 @@ public class TwitterUser implements Serializable {
     private String screenName;
     private String description;
     private String email;
+    private String profileImageURL;
     private String profileURL;
     private Integer followersNumber;
 
@@ -30,7 +31,7 @@ public class TwitterUser implements Serializable {
                 "screenName='" + screenName + '\'' +
                 ", description='" + description + '\'' +
                 ", email='" + email + '\'' +
-                ", profileURL='" + profileURL + '\'' +
+                ", profileURL='" + profileImageURL + '\'' +
                 ", followersNumber=" + followersNumber +
                 '}';
     }
