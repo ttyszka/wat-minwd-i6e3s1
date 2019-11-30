@@ -50,7 +50,8 @@
                                 {% csrf_token %}
                                 <tr>
                                     <input id="tweet_id" name="tweet_id" type="text" value="{{ tweet.id_str }}" hidden/>
-                                    <input id="tweet_favorited" name="tweet_favorited" type="text" value="{{ tweet.favorited }}" hidden/>
+                                    <input id="tweet_favorited" name="tweet_favorited" type="text"
+                                           value="{{ tweet.favorited }}" hidden/>
                                     <td width="5%"><img src="{{ tweet.user.profile_image_url_https }}"></td>
                                     <td width="5%">{{ tweet.user.screen_name }}</td>
                                     <td height="60">{{ tweet.text }}</td>
@@ -66,9 +67,8 @@
                                             </span>
                                         </button>
                                     </td>
+                                </tr>
                             </form>
-                            </tr>
-
                         {% endfor %}
                         </tbody>
                     </table>
