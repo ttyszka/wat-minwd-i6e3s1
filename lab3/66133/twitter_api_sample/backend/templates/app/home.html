@@ -41,16 +41,16 @@
             </header>
             <div class="card-table" style="max-height: 500px">
                 <div class="content">
-                    <form method="post">
-                        {% csrf_token %}
 
-                        <table class="table is-fullwidth is-striped">
-                            <tbody>
-                            {% for tweet in home_timeline %}
+
+                    <table class="table is-fullwidth is-striped">
+                        <tbody>
+                        {% for tweet in home_timeline %}
+                            <form method="post">
+                                {% csrf_token %}
                                 <tr>
-                                    <input id="tweet_id" name="tweet_id" type="text" value="{{ tweet.id }}" hidden/>
-                                    <input id="tweet_favorited" name="tweet_favorited" type="text"
-                                           value="{{ tweet.favorited }}" hidden/>
+                                    <input id="tweet_id" name="tweet_id" type="text" value="{{ tweet.id_str }}" hidden/>
+                                    <input id="tweet_favorited" name="tweet_favorited" type="text" value="{{ tweet.favorited }}" hidden/>
                                     <td width="5%"><img src="{{ tweet.user.profile_image_url_https }}"></td>
                                     <td width="5%">{{ tweet.user.screen_name }}</td>
                                     <td height="60">{{ tweet.text }}</td>
@@ -66,12 +66,13 @@
                                             </span>
                                         </button>
                                     </td>
-                                </tr>
+                            </form>
+                            </tr>
 
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </form>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>

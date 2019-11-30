@@ -76,8 +76,10 @@ def handle_favorite_tweet_action(request):
     if tweet_id:
         if tweet_favorited == 'False':
             api.create_favorite(id=tweet_id)
+            print 'Favorite created!'
         elif tweet_favorited == 'True':
             api.destroy_favorite(id=tweet_id)
+            print 'Favorite destroyed!'
 
 
 def get_full_quality_profile_image_url(profile_image_url):
