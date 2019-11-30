@@ -48,14 +48,10 @@ public class AuthController {
     }
 
 
-    @PostMapping("/signout")
-    public String logOut(HttpServletRequest request, HttpServletResponse response) throws TwitterException, IOException {
+    @GetMapping("/signout")
+    public void logOut(HttpServletRequest request, HttpServletResponse response) throws TwitterException, IOException {
 
         request.getSession().removeAttribute("accessToken");
-
-        return "redirect:/";
-
-
     }
 
     @GetMapping("/callback")

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
+import watminwdi6e3s13.zad3.pojo.FirstLastTweets;
 import watminwdi6e3s13.zad3.pojo.TwitterUser;
 
 import java.util.List;
@@ -49,11 +50,11 @@ public class UserInfoService {
 
     }
 
-    public void getFirstAndLastTweets(AccessToken accessToken) {
-//        myTwitter.setOAuthAccessToken(accessToken);
-//        myTwitter.getUserTimeline().
+    public FirstLastTweets getFirstAndLastTweets(AccessToken accessToken) throws TwitterException {
+        myTwitter.setOAuthAccessToken(accessToken);
+        ResponseList<Status> statusResponseList = myTwitter.getUserTimeline();
+        return new FirstLastTweets(statusResponseList.get(statusResponseList.size() - 1), statusResponseList.get(0));
 
-        //TODO:// get last and first tweet
     }
 
 
