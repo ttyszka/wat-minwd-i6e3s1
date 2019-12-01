@@ -1,0 +1,22 @@
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.deps.json
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.dll
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.AssemblyInfoInputs.cache
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.AssemblyInfo.cs
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.pdb
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.DAL.dll
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.DAL.pdb
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.csprojAssemblyReference.cache
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.csproj.CopyComplete
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.dll
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.pdb
+D:\projects\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.deps.json
+D:\projects\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.dll
+D:\projects\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.Services.pdb
+D:\projects\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.DAL.dll
+D:\projects\GithubAPI\GithubAPI.Services\bin\Debug\netcoreapp3.0\Github.DAL.pdb
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.csprojAssemblyReference.cache
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.AssemblyInfoInputs.cache
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.AssemblyInfo.cs
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.csproj.CopyComplete
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.dll
+D:\projects\GithubAPI\GithubAPI.Services\obj\Debug\netcoreapp3.0\Github.Services.pdb
