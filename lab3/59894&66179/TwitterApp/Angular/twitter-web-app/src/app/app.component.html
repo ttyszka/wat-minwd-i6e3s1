@@ -1,0 +1,21 @@
+<div class="main-container">
+  <ngx-spinner bdColor="rgba(100,149,237,0.8)" style="height:100vh;" size="medium" color="#fff" type="line-scale-party"
+    [fullScreen]="false">
+    <p style="color: white"> Ładowanie... </p>
+  </ngx-spinner>
+  <div class="user-sidebar">
+    <app-user-info> </app-user-info>
+  </div>
+  <div class="user-content" style="text-align:top">
+    <mat-tab-group>
+      <mat-tab label="Word Cloud">
+        <app-words-map></app-words-map>
+      </mat-tab>
+      <mat-tab label="Posts">
+        <app-posts></app-posts>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,53 @@
+<mat-card *ngIf="userModel" class="example-card">
+      <mat-card-header>
+      <img class="avatar" [src]="imagePath" /> 
+      <div class="container">
+      <mat-card-title>{{userModel.name}}</mat-card-title>
+      <mat-card-subtitle>{{userModel.screen_Name}}</mat-card-subtitle></div>
+    </mat-card-header>
+ <mat-card-content>
+        <div class="descripton"><br>
+        {{userModel.description}}</div><br>
+            <table class="tg">
+                <tr>
+                  <th class="tg-73oq">ID</th>
+                  <th class="tg-73oq">{{userModel.id}}</th>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Date joined<br></td>
+                  <td class="tg-73oq">{{userModel.creationTime}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Location</td>
+                  <td class="tg-73oq">{{userModel.location}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">URL</td>
+                  <td class="tg-73oq">{{userModel.url}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Verified</td>
+                  <td class="tg-73oq">{{userModel.verified}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Followers count</td>
+                  <td class="tg-73oq">{{userModel.followers_Count}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Friends count</td>
+                  <td class="tg-73oq">{{userModel.friends_Count}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Posts</td>
+                  <td class="tg-73oq">{{userModel.statuses_Count}}</td>
+                </tr>
+                <tr>
+                  <td class="tg-73oq">Liked Tweets</td>
+                  <td class="tg-73oq">{{userModel.favourites_Count}}</td>
+                </tr>
+              </table>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button href="https://twitter.com/{{userModel.screen_Name}}" target="_blank">VISIT ON TWITTER</a>
+    </mat-card-actions>
+  </mat-card>
