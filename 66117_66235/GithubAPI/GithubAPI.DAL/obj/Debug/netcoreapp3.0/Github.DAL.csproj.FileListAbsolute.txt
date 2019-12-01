@@ -1,0 +1,16 @@
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.deps.json
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.dll
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.AssemblyInfoInputs.cache
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.AssemblyInfo.cs
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.csprojAssemblyReference.cache
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.pdb
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.dll
+E:\OneDrive - Wojskowa Akademia Techniczna\Uczelnia\Semestr 7\Min\GithubAPI\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.pdb
+D:\projects\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.AssemblyInfoInputs.cache
+D:\projects\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.AssemblyInfo.cs
+D:\projects\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.dll
+D:\projects\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.pdb
+D:\projects\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.deps.json
+D:\projects\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.dll
+D:\projects\GithubAPI\GithubAPI.DAL\bin\Debug\netcoreapp3.0\Github.DAL.pdb
+D:\projects\GithubAPI\GithubAPI.DAL\obj\Debug\netcoreapp3.0\Github.DAL.csprojAssemblyReference.cache
