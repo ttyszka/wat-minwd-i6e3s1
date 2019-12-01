@@ -1,0 +1,233 @@
+body {
+    font-family: 'Sarala', sans-serif;
+    text-align: center;
+    background: #f1ece5;
+}
+
+div {
+    display: block;
+}
+
+p {
+    margin: 15px;
+}
+
+
+/*NAVBAR SECTION*/
+
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navbar-toggle {
+    z-index: 3;
+}
+
+.navbar-left li {
+    border-right: #000 1px solid;
+}
+
+
+/*PERSONALISATION DROPDOWN MENU */
+
+
+.dropdown-menu {
+    background: #222;
+}
+.dropdown-menu span {
+    font-size: 110%;
+    color: #cccccc;
+    margin-left: 10%;
+}
+
+.dropdown-menu li {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid #000000;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+
+.center-block {
+    float: none;
+}
+
+/*SLIDER IN DROPDOWN*/
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+    vertical-align: middle;
+    float: right;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #cccccc;
+    -webkit-transition: .4s;
+    -moz-transition: .4s ;
+    -ms-transition: .4s ;
+    -o-transition: .4s ;
+    transition: .4s ;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+input:checked + .slider {
+    background-color: #424242;
+}
+
+input:checked + .slider {
+    -webkit-box-shadow: 0 0 1px #424242;
+    -moz-box-shadow: 0 0 1px #424242;
+    box-shadow: 0 0 1px #424242;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+.slider.round {
+    -webkit-border-radius: 34px;
+    -moz-border-radius: 34px;
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/*TITLE SECTION*/
+
+
+#title-section {
+    background: url("../img/architecture-1850129_1920.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-bottom: 135px;
+    padding-top: 99px;
+    margin-bottom: 25px;
+}
+
+
+/*BOXES SECTION*/
+
+#city-headline {
+    font-size: 200%;
+    font-weight: 700;
+}
+
+.boxes {
+    margin-top: 25px;
+    margin-bottom: 100px;
+    padding-top: 25px;
+    border-top: #D3D3D3 solid 1px;
+}
+
+.info-box {
+    width: 210px;
+    height: 402px;
+    border-right: 1px #424242 solid;
+    display: inline-block;
+    flex: 1;
+    margin-right: -5px;
+    text-align: left;
+    padding: 20px;
+    font-weight: 700;
+    background-color:rgba(150,150,150,0.6);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 4px;
+    overflow: auto;
+    color: #000;
+}
+
+.info-box:last-child {
+    border-right: none;
+}
+
+
+.gen-status {
+    font-size: 150%;
+    padding-top: 30px;
+    text-transform: capitalize;
+}
+
+.icon {
+    border: 1px #D3D3D3 solid;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+
+.hour-disp {
+    font-size: 150%;
+}
+
+.footer {
+    background: #222;
+    color: #9d9d9d;
+}
+
+
+li:before {
+    display: inline-block;
+    height: 1rem;
+    width: .5rem;
+}
+
+/*FOOTER*/
+
+footer h3 {
+    font-size: 23px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+footer ul {
+    list-style-type: none;
+    display: block;
+    padding: 20px;
+}
