@@ -65,6 +65,9 @@ To get access to Twitter API you must apply for a Twitter developer account and 
 Authors: Mateusz Książek I6E3S1, 59894
 Wojciech Regulski I6E3S1, 66179
 
+Activity history: https://i.imgur.com/qRdrhyR.png
+In case of any doubts, you can request an access to private repo.
+
 Przedmiot: Metody i narzędzia informatycznego wspomagania decyzji
 
 Prowadzący: mgr inż. Kamil Banach
