@@ -1,0 +1,25 @@
+.main-container{
+    margin-left: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.user-content{
+    flex: 6;
+    min-width: 950px;
+    max-width: 950px;
+    justify-content: center;
+}
+
+.filler{
+    flex-grow: 1;
+}
+
+.user-sidebar{
+    flex: 3;
+    min-width: 300px;
+    max-width: 300px;
+}
