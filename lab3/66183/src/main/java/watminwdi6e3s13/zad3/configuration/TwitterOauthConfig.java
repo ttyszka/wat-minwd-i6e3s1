@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 
+/**
+ * Configuration class
+ * Register new twitter bean in application context with value parse from application.properties
+ */
 @Configuration
 public class TwitterOauthConfig {
 

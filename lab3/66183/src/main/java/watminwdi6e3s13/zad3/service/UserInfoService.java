@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Service gets all neccessary information from twitter REST API and get needed information
+ */
 @Service
 public class UserInfoService {
 
@@ -24,7 +27,11 @@ public class UserInfoService {
         this.myTwitter = myTwitter;
     }
 
-
+    /**
+     * @param accessToken
+     * @return TwitterUser object with information f.ex user Twitter description, user email,
+     * @throws TwitterException if access token is incorrect
+     */
     public TwitterUser getUserInfo(AccessToken accessToken) throws TwitterException {
         myTwitter.setOAuthAccessToken(accessToken);
         User user = myTwitter.users().showUser(myTwitter.getScreenName());
@@ -41,6 +48,12 @@ public class UserInfoService {
         return twitterUser;
     }
 
+    /**
+     * @param tweetsNumber tweets number which will be get from twitter
+     * @param accessToken
+     * @return List of HashEntity with all hashes from
+     * @throws TwitterException if access token is incorrect
+     */
     public List<HashtagEntity[]> getTagsFromTweets(Integer tweetsNumber, AccessToken accessToken) throws TwitterException {
         myTwitter.setOAuthAccessToken(accessToken);
         Stream<Status> statuses = myTwitter.timelines().getUserTimeline(new Paging(1, tweetsNumber)).stream();
@@ -50,6 +63,11 @@ public class UserInfoService {
 
     }
 
+    /**
+     * @param accessToken
+     * @return FirstLastTweet object with info about latest and first published tweet
+     * @throws TwitterException if access token is incorrect
+     */
     public FirstLastTweets getFirstAndLastTweets(AccessToken accessToken) throws TwitterException {
         myTwitter.setOAuthAccessToken(accessToken);
         ResponseList<Status> statusResponseList = myTwitter.getUserTimeline();

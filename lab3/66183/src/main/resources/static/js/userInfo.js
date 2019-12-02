@@ -1,16 +1,18 @@
+//pages URL for geting information
+
 let userInfoURL = 'http://localhost:8080/info/user';
 let latestHashTagsURL = 'http://localhost:8080/info/hashtag_cloud?';
 let firstLastTweetURL = 'http://localhost:8080/info/tweet';
 let signOutURL = 'http://localhost:8080/auth/signout';
 
 
-//get general information about user
+//get general information about user in async mode
 let getOverview = async function () {
 
 
     let response = await fetch(userInfoURL);
 
-    if (!response.ok) {
+    if (!response.ok) { //check if response return status 200 from backend
         return;
     }
 
@@ -20,7 +22,7 @@ let getOverview = async function () {
     contentDiv.innerHTML = '';
     let infoTable = styleOverview(contentDiv);
 
-    if (json['profileImageURL'] != null)
+    if (json['profileImageURL'] != null) //check if json response has url to profile image if it has get image profile from twitter api
         document.images[0].setAttribute('src', json['profileImageURL']);
 
     for (let key in json) {
@@ -80,6 +82,7 @@ function styleOverview(contentDiv) {
     return infoTable;
 }
 
+// gets hashtags from application api style it and show on user_info.html page with flex
 async function getHashTagsCloud(e, tweets = 20) {
 
     let params = {
@@ -95,12 +98,12 @@ async function getHashTagsCloud(e, tweets = 20) {
     console.log(url);
     let response = await fetch(url);
 
-    if (!response.ok) {
+    if (!response.ok) { //check if response return code 200
         console.log('Not ok');
         return;
     }
 
-    let json = await response.json();
+    let json = await response.json(); //parse json respone if it rreturn code 200
     console.log(json);
     let hashtags = document.getElementById('info_content');
 
@@ -133,12 +136,14 @@ async function getHashTagsCloud(e, tweets = 20) {
 
 }
 
+// style hashes style it with css formating
 var currentInputValue = 20;
 function styleHashtags(hashTagsDiv) {
 
+    //create new form with input when user will have an option to choose number of tweets he want information from
     let form = '<h1>Latest hashtags</h1><form><input id="tweets_number" type="number" min="0" max="180"></form><div id="hashes"></div>';
 
-
+//style hashes
     hashTagsDiv.innerHTML = '';
     hashTagsDiv.innerHTML = form;
     let h1Element = hashTagsDiv.querySelector('h1');
@@ -152,6 +157,7 @@ function styleHashtags(hashTagsDiv) {
 
 }
 
+//function add event listener to input field on subpage with hashes
 function addInputEvent() {
     let input = document.getElementById('tweets_number');
     input.setAttribute('value', currentInputValue);
@@ -164,6 +170,7 @@ function addInputEvent() {
 
 }
 
+// adding listeners to menu buttons on top of user_info.html webpage
 function addListeners() {
 
 
@@ -229,6 +236,7 @@ function styleFirstLastTweet(contentDiv) {
 
 }
 
+//function signing out from application remove accesstoken stored in backend and redirect back to sign in webpage
 async function signOut() {
     let response = await fetch(signOutURL);
 
