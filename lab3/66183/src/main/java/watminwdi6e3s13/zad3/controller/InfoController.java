@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+/**
+ * controller which return user information mainly in json format
+ */
 @Controller
 @RequestMapping("/info")
 public class InfoController {
@@ -30,12 +33,21 @@ public class InfoController {
         this.userInfoService = userInfoService;
     }
 
+    /**
+     * it return main page which is a base for displaying rest of application
+     */
     @GetMapping("/overview")
     public String generalUserInfo(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().getAttribute("accessToken");
         return "user_info";
     }
 
+    /**
+     * @param request
+     * @param response
+     * @return General user information request from twitter API and get all info which are stored in pojo/TwitterUser
+     * @throws TwitterException
+     */
     @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public TwitterUser getGeneralUserInfo(HttpServletRequest request, HttpServletResponse response) throws TwitterException {
@@ -43,6 +55,12 @@ public class InfoController {
         return userInfoService.getUserInfo(accessToken);
     }
 
+    /**
+     * @param request
+     * @param tweetsNumber
+     * @return "hashtags cloud" from last tweets (by default 20) byt the number of tweets can be adjust
+     * @throws TwitterException
+     */
     @GetMapping(value = "/hashtag_cloud", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public List<HashtagEntity[]> getTagsFromTweets(HttpServletRequest request, @RequestParam(name = "tweets_number", defaultValue = "20") Integer tweetsNumber) throws TwitterException {
@@ -50,6 +68,11 @@ public class InfoController {
         return userInfoService.getTagsFromTweets(tweetsNumber, accessToken);
     }
 
+    /**
+     * @param request
+     * @return first published tweet and latest tweet from pojo/FirstLastTweets
+     * @throws TwitterException
+     */
     @GetMapping(value = "/tweet", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public FirstLastTweets getTagsFromTweets(HttpServletRequest request) throws TwitterException {

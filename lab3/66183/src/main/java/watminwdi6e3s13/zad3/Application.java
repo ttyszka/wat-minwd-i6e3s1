@@ -3,6 +3,9 @@ package watminwdi6e3s13.zad3;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Application starter
+ */
 @SpringBootApplication
 public class Application {
 

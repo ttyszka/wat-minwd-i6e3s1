@@ -16,6 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ * Login controller serve every request to auth twitterj API
+ * it also save twitter access token in memory
+ */
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
@@ -29,6 +34,15 @@ public class AuthController {
 
     }
 
+    /**
+     * use when need to login to twitter api and get access token to get personal user info
+     * it redirect user to twitter login page
+     *
+     * @param request
+     * @param response
+     * @throws TwitterException
+     * @throws IOException
+     */
     @PostMapping("/signin")
     public void signIn(HttpServletRequest request, HttpServletResponse response) throws TwitterException, IOException {
 
@@ -47,13 +61,29 @@ public class AuthController {
 
     }
 
-
+    /**
+     * method which is used when user want to sign out of application
+     * access token is destroyed
+     *
+     * @param request
+     * @param response
+     * @throws TwitterException
+     * @throws IOException
+     */
     @GetMapping("/signout")
     public void logOut(HttpServletRequest request, HttpServletResponse response) throws TwitterException, IOException {
 
         request.getSession().removeAttribute("accessToken");
     }
 
+    /**
+     * After being authorize twitter flow redirect to this controller method when accessToken is saved to memory
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws TwitterException
+     */
     @GetMapping("/callback")
     public String callbackHandler(HttpServletRequest request, HttpServletResponse response) throws TwitterException {
 

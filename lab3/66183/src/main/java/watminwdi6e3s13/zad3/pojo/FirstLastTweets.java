@@ -12,6 +12,7 @@ import twitter4j.Status;
 @Setter
 public class FirstLastTweets {
 
+
     private Status firstTweet;
     private Status lastTweet;
 }
