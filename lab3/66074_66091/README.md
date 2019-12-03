@@ -1,0 +1,25 @@
+# twitter-api-nodejs
+
+Klient api Twittera
+Funkcje:
+- wyświetlenie wszystkich tweetów użytkownika
+- wyświetlenie informacji o użytkowniku
+- wyświetlenie chmury używanych tagów 
+
+Wymaga zainstalowanego NPM, Node.js oraz podania własnych kluczy API w src/config/client_secret.json
+
+Źródło backendu: https://github.com/ventus34/twitter-api-nodejs/tree/master
+Źródło frontendu: https://github.com/Mar1Gor/front-twitter-api
+
+Instalacja:
+
+    npm install
+
+Uruchomienie:
+
+    1. npm start
+    2. Uruchom w przeglądarce http://localhost:4200
+
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+

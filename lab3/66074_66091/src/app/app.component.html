@@ -1,0 +1,112 @@
+<h3 class="ctr">TwitterAPI test</h3>
+<div class="ctr">
+  <div class="container">
+    <div class="row">
+      <div class=".col-xs-12">
+
+
+        <input type="text"
+               class=form-control
+               [(ngModel)]="username"
+               [disabled]=true>
+
+        <p></p>
+        <button mat-raised-button (click)="openComment(); retrieveUser(); retrieveTweets(); retrieveTags()">
+          fetch recent data
+        </button>
+
+        <hr>
+        <button class=btn-default
+                [disabled]="username.length<1"
+                (click)=showUserPersonals()>
+          user details
+        </button>
+        <button class=btn-default
+                [disabled]="username.length<1"
+                (click)=showUserTweets()>
+          user tweets
+        </button>
+        <button class=btn-default
+                [disabled]="username.length<1"
+                (click)=showUserTagCloud()>
+          user tag cloud
+        </button>
+
+        <ng-container *ngIf="areDetailsVisible">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="uzytkownik">
+              <th mat-header-cell *matHeaderCellDef> Użytkownik</th>
+              <td mat-cell *matCellDef="let element"> {{element.uzytkownik}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="nazwaUzytkownika">
+              <th mat-header-cell *matHeaderCellDef> Nazwa użytkownika</th>
+              <td mat-cell *matCellDef="let element"> {{element.nazwaUzytkownika}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="miejscowosc">
+              <th mat-header-cell *matHeaderCellDef> Miejscowość</th>
+              <td mat-cell *matCellDef="let element"> {{element.miejscowosc}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="obserwujacy">
+              <th mat-header-cell *matHeaderCellDef> Obserwujący</th>
+              <td mat-cell *matCellDef="let element"> {{element.obserwujacy}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="obserwowani">
+              <th mat-header-cell *matHeaderCellDef> Obserwowani</th>
+              <td mat-cell *matCellDef="let element"> {{element.obserwowani}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="iloscPostow">
+              <th mat-header-cell *matHeaderCellDef> Ilość tweetów</th>
+              <td mat-cell *matCellDef="let element"> {{element.iloscPostow}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </ng-container>
+        <!--<pre>{{dzejson | json}}</pre>-->
+        <ng-container *ngIf="isCloudVisible">
+          <angular-tag-cloud
+            [data]="data"
+            [width]="options.width"
+            [height]="options.height"
+            [overflow]="options.overflow">
+          </angular-tag-cloud>
+        </ng-container>
+        <!--<mat-accordion>-->
+        <ng-container *ngIf="areTweetsVisible">
+          <mat-expansion-panel *ngFor="let tweet of resultTweetArray">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{tweet.lang}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{tweet.createTime}}
+              </mat-panel-description>
+              <mat-panel-description>
+                <h5>Retweeted: {{tweet.retweeted}}</h5>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <hr>
+            <p>{{tweet.message}}</p>
+            <hr>
+          </mat-expansion-panel>
+        </ng-container>
+        <hr>
+
+      </div>
+    </div>
+  </div>
+</div>
