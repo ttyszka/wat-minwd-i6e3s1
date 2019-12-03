@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(128deg, rgba(2, 21, 85, 1) 7%, rgba(23, 149, 196, 1) 56%, rgba(78, 219, 255, 1) 100%);
+    color: white;
+
+}
+
+.login_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#top_menu {
+    height: 10%;
+    width: 100%;
+    padding: 2%;
+}
+
+#top_menu h2 {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+
+#signIn_button {
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-height: 30%;
+    transform: translateY(-30%);
+}
+
+#signIn_button h1 {
+    width: 40%;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+#signIn_button #whiteline {
+    width: 80%;
+    margin: auto;
+    background: white;
+    height: 1px;
+}
+
+#signIn_button h4 {
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+#signIn_button form {
+    width: 40%;
+    text-align: center;
+}
+
+#signIn_button input {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: solid white 2px;
+    border-radius: 20px;
+    padding: 2% 10%;
+    margin: auto;
+}
+
+footer {
+    text-transform: uppercase;
+}
+
+
+
