@@ -1,0 +1,22 @@
+{
+  "name": "x-kom-scrapper",
+  "version": "1.0.0",
+  "description": "Simple scrapper for x-kom.pl",
+  "main": "scrapper.js",
+  "dependencies": {
+    "JSONStream": "^1.3.5",
+    "cheerio": "^1.0.0-rc.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node scrapper.js https://www.x-kom.pl/g-2/c/1668-tablety-10.html output.json"
+  },
+  "author": "Ventus34",
+  "license": "ISC",
+  "keywords": [
+    "xkom",
+    "scrapper"
+  ]
+}
