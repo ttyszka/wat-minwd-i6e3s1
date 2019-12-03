@@ -23,3 +23,10 @@ Uruchomienie:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
+<img src="https://raw.githubusercontent.com/ventus34/wat-minwd-i6e3s1/master/lab3/66074_66091/1.png" alt="Screenshot" style="display:block;margin:0 auto 5%; width: 40%;"/>
+
+<img src="https://raw.githubusercontent.com/ventus34/wat-minwd-i6e3s1/master/lab3/66074_66091/2.png" alt="Screenshot" style="display:block;margin:0 auto 5%; width: 40%;"/>
+
+<img src="https://raw.githubusercontent.com/ventus34/wat-minwd-i6e3s1/master/lab3/66074_66091/3.png" alt="Screenshot" style="display:block;margin:0 auto 5%; width: 40%;"/>
+
+<img src="https://raw.githubusercontent.com/ventus34/wat-minwd-i6e3s1/master/lab3/66074_66091/4.png" alt="Screenshot" style="display:block;margin:0 auto 5%; width: 40%;"/>
