@@ -1,0 +1,28 @@
+<div class="content">
+<h3> Twitter Word Cloud </h3>
+<h6>Select range of latest tweets to calculate statistics</h6><br>
+<div class="container"><mat-slider 
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="max"
+    [min]="min"
+    [step]="step"
+    [thumbLabel]="thumbLabel"
+    [tickInterval]="tickInterval"
+    [vertical]="vertical" 
+    [value]="value"
+    (input) = onSliderChange($event)
+    > 
+
+</mat-slider ><br>
+<div class="button-1"><button mat-flat-button color="primary" height=15px 
+(click) = "onButtonClick()">Generate</button></div>
+</div>
+<div>
+    <angular-tag-cloud
+      [data]="finalWordsMap"
+      [width]="options.width"
+      [height]="options.height"
+      [overflow]="options.overflow">
+    </angular-tag-cloud>
+  </div></div>

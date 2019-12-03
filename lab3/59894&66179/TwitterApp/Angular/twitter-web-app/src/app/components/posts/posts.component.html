@@ -1,0 +1,11 @@
+<div *ngIf="tweetModel" class="container">
+<div class="latest post">
+<h3> Most recent tweet </h3>
+<ngx-tweet tweetId="{{tweetModel.lastTweetId}}"></ngx-tweet>
+</div>
+<div class="filler"></div>
+<div class="first post">
+<h3> First tweet</h3>
+<ngx-tweet tweetId="{{tweetModel.firstTweetId}}"></ngx-tweet></div>
+</div>
+
