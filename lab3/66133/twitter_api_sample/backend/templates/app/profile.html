@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="columns">
+        <div class="column is-3">
+            <img src="{{ profile_image_url }}" height="230" width="230" style="max-width: 230px">
+        </div>
+        <div class="column is-9">
+
+            <section class="hero is-info welcome is-small" style="height: 230px">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            {{ current_user.name }} ({{ user.username }})
+                        </h1>
+                        <h2 class="subtitle">
+                            {{ current_user.description }}
+                        </h2>
+                        <h3 class="subtitle">
+                            {{ current_user.location }}
+                        </h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <section class="info-tiles">
+        <div class="tile is-ancestor has-text-centered">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <p class="title">{{ current_user.friends_count }}</p>
+                    <p class="subtitle">Following</p>
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <p class="title">{{ current_user.followers_count }}</p>
+                    <p class="subtitle">Followers</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="info-tiles">
+        <div class="tile is-ancestor has-text-centered">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <div class="field">
+                        <div class="control">
+                            <form method="post" class="post-form">
+                                {% csrf_token %}
+                                {{ wordcloud_form.tweets_count|as_crispy_field }}
+                                <input type="submit" value="Refresh">
+                            </form>
+                        </div>
+                    </div>
+                    <img src="data:image/jpeg;base64,{{ wordcloud }}" height="750" width="750">
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock %}
