@@ -1,29 +1,18 @@
-Simple Twitter Scraper
+# lab2_scraper
 
+Niezbedne do uruchomienia node.js
 
-Output Data
-------------
-```json
-{
-	"id": "123456789012345678",
-	"permalink": "https://twitter.com/username/status/123456789012345678",
-	"username": "username",
-	"text": "@abcd @efgh #This is #tweet text",
-	"datetime": "2019-12-03 11:11",
-	"retweets": 30,
-	"favorites": 20,
-	"mentions": "@abcd @efgh",
-	"hashtags": "#This #tweet",
-	"geo": ""
-}
-```
+W miejscu z folderem projektu:
 
-Instrukcja obslugi
-----------
-`simple-twitter-scraper <keyword> <first date(YYYY-MM-DD)> <last date(YYYY-MM-DD)> <output directory>`
-```sh
-> npm install -g simple-twitter-scraper
-> mkdir tmp_twitter
-> cd tmp_twitter
-> simple-twitter-scraper obama 2019-12-03 2019-12-04 ./
-```
+- install npm
+
+- uruchomic 
+
+#Co się dzieje?
+
+Ze strony
+
+https://pl.wiktionary.org/wiki/Indeks:Angielski_-_Zawody
+
+pobieram informacje o członkach rodziny po polsku i ich odpowiednikach po angielsku zostają one zapisane do pliku csv
+(w index.js)
