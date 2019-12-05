@@ -1,0 +1,34 @@
+{
+	"name": "simple-twitter-scraper",
+	"version": "0.0.1",
+	"description": "Simplify twitter scraper using adapted twitter-scraper package.",
+	"main": ".#t1.js",
+	"dependencies": {
+		"lodash": "3.x",
+		"moment": "2.x",
+		"cheerio": "0.19.x",
+		"debug": "2.x",
+		"request": "2.x"
+	},
+	"devDependencies": {},
+	"engines": { "node": ">= 0.4.0" },
+	"preferGlobal": true,
+	"bin": {
+		"simple-twitter-scraper": "main.js"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		
+	},
+	"main": "./index.js",
+	"license": "MIT",
+	"keywords": [
+		"twitter",
+		"scraper",
+		"simple"
+	]
+}
+
