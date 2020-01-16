@@ -1,0 +1,46 @@
+Zadanie 6. 
+Dziecko w pewnym wieku potrzebuje określonych ilości witamin.
+Ilość witamin dostarczanych przez pewne produkty przedstawiono poniżej.
+Należy wyznaczyć takie ilości poszczególnych produktów, aby zapewnić pożądaną ilość zachowując jak najniższy koszt.
+
+
+Produkty		Ilość witamin w jednostce	Koszt jednostkowy [zł]
+			A		B	
+P1			6		1			1,2
+P2			3		3			1,8
+P3			4		2			2,0
+P4			4		4			0,9
+Minimalna ilość		120		60	
+Zbuduj model matematyczny i rozwiąż zadanie metodą geometryczną.
+----------------------------------------------------------------------
+
+
+zbiór C = {1,2,3,4}
+x1,x2,x3,x4- rodzaj produktu
+
+Ai - ilośc witaminy A w i-tej jednosce produktu, gdzie i∈C
+Bi - ilość witaminy B w i-tej jednosce produktu, gdzie i∈C
+Ki - koszt jednostkowy[zł] produktu i, gdzie i∈C
+
+Łączna ilość witaminy A dla wszstkich produktów nie może być mniejsza niż 120
+Łączna ilość witaminy B dla wszstkich produktów nie może być mniejsza niż 60
+
+Funkcja celu :
+f: min(1.2*x1+1.8*x2+2.0*x3+0.9*x4)
+
+Ograniczenia :
+6*x1+3*x2+4*x3+4*x4 >=120
+1*x1+3*x2+2*x3+4*x4 >=60
+
+
+Rozwiązanie :
+x1 = 12
+x2 = 0
+x3 = 0
+x4 = 12
+
+f = 25.2
+
+----------------------------------------------
+nalezy pobrać bibliotekę pulp wpisując w cmd :
+pip install pulp
