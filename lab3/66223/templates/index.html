@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+   <!-- <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+-->
+    <style>
+        body{
+    box-sizing: border-box;
+}
+
+.enter-text{
+    height: auto;
+    width: auto;
+    background-color:black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.media{
+    margin-left: 40%;
+    margin-top: auto;
+    border-radius: 5%;
+    border: blue;
+
+
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            <div class="enter-text">
+                <div class="only-text">
+                    <input class="input" name="city1" type="text" placeholder="Nazwa miasta">
+                    <input class="input" name="city2" type="text" placeholder="Nazwa miasta">
+                    <input class="input" name="city3" type="text" placeholder="Nazwa miasta">
+                    <input class="input" name="city4" type="text" placeholder="Nazwa miasta">
+                    <button class="button-info">
+                        Dodaj
+                    </button>
+                </div>                
+            </div>
+        </form>
+            {% for weather in list_city %}
+            <div class="media">
+                <div class="left-site">
+                    <figure class="image-s">
+                        <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <span class="title">{{weather.city}}</span>
+                            <br>
+                            <span class="subtitle">{{weather.temperature}}°C</span>
+                            <br> {{weather.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+
+</body>
+</html>
